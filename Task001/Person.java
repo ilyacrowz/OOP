@@ -1,4 +1,4 @@
-package OOP1.JavaOOP1;
+package OOP.Task001;
 public class Person {
     public String fullName;
     public int age;
