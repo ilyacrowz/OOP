@@ -1,25 +1,23 @@
-package OOP.Task002;
+public class Cat extends Animal implements Runable{
 
-public class Cat {
-    private String name;
+    private String color;
 
-    public Cat(String name) {
-        this.name = name;
+    public Cat(String name, int box, String color) {
+        super(name, box);
+        this.color = color;
     }
 
-    public void catComeIn(String name){
-        System.out.println("кошка " + name + " подходит и говорит: 'мяу'"); 
+    @Override
+    public int speedOfRun() {
+        return 15;
     }
 
-    public void catComeOut(String name){
-        System.out.println("кошка " + name + " не отозвалась");
+    @Override
+    public String say() {
+        return "Мяу";
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return String.format("Cat: %s, colour: %s", super.toString(), this.color);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
