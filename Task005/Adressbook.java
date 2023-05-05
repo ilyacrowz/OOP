@@ -10,9 +10,9 @@ public class Adressbook {
         pb.add(new Phonebook("Кирилов Александр Сергеевич","+790488888","Москва"));        
     }
 
-    public void showAddressBook(){
-        for(Phonebook i:pb){
-            System.out.println(i.getName()+" "+i.getPhone()+" "+i.getCity());
-        }
+    public void showAddressBook(ArrayList<Phonebook> phnbook){
+        for(Phonebook i:phnbook){
+                    System.out.println(i.getName()+" "+i.getPhone()+" "+i.getCity());
+                }
     }
 }
