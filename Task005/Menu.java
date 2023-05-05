@@ -2,6 +2,8 @@ package Task005;
 
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class Menu {
     public static void mainMenu(){
       Scanner in = new Scanner(System.in);
@@ -19,15 +21,15 @@ public class Menu {
 
       switch(input){
         case 1:
-            phones.showAddressBook();
+            phones.showAddressBook(phones.pb);                        
             break;
-        case 2:            
+        case 2:      
             run.ExportFile(phones.pb); 
             System.out.println("Export finish");
-            break;
+            break;            
         case 3:
-            run.ImportFile(phones.pb);            
-            phones.showAddressBook();
+            // phones.showAddressBook();
+            phones.showAddressBook(run.ImportFile());                             
             break;
             
             

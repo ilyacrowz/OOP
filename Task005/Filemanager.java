@@ -7,9 +7,11 @@ public class Filemanager {
     String FILE_PATH="./Java/OOP5/";
     String FILE_NAME_EXPORT="export.csv";
     String FILE_PATH_FULL=FILE_PATH+FILE_NAME_EXPORT;
+    
+    ArrayList<Phonebook> phb = new ArrayList<>();
 
     public void ExportFile(ArrayList<Phonebook> pb){
-          try(FileWriter writer=new FileWriter(FILE_PATH_FULL
+          try(FileWriter writer=new FileWriter(FILE_PATH_FULL;
           ,false))
           {
              for(Phonebook i:pb){
@@ -25,18 +27,19 @@ public class Filemanager {
           }
     }
 
-    public void ImportFile(ArrayList<Phonebook> pb){
+    public ArrayList<Phonebook> ImportFile(){
         try
         {
         File file=new File(FILE_PATH_FULL);
         FileReader fr=new FileReader(file);
-        
+        ArrayList<Phonebook> result=new ArrayList<>();
         BufferedReader reader=new BufferedReader(fr);
         String line=reader.readLine();                
 
         while(line!=null){
+            // System.out.println(line);
             String[] tmp=line.split(";");
-            pb.add(new Phonebook(tmp[0],tmp[1],tmp[2]));
+            phb.add(new Phonebook(tmp[0],tmp[1],tmp[2]));
             line=reader.readLine();
         }
         }
@@ -45,5 +48,7 @@ public class Filemanager {
         }catch(IOException e){
             e.printStackTrace();
         }
+
+        return phb;
     }
 }
